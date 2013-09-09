@@ -72,4 +72,19 @@ typedef enum {
  */
 -(BOOL) decrypt:(NSString *)inputFile to:(NSString *)outputFile;
 
+/**
+ Creates a secret key, based in part on the input key.
+ @param key The base key which will seed the return key.
+ @result The secret key, based on the input key.
+ */
++ (NSData *)secretWithKey:(NSString *)key;
+
+/**
+ Returns a unique identifier associated with this app install.  The identifier will
+ remain the same for the lifetime of the app's installation on the device.  If the
+ app is uninstalled, a new identifier will be created if it is ever reinstalled.
+ @result A unique identifier for the app install on the particular device.
+ */
++ (NSString *)baseAppIdentifier;
+
 @end
