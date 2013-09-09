@@ -17,7 +17,7 @@
  @param size Size to constraint the label to. 
  @param mode Line break mode this label should use for its text
  */
-- (UIFont *)fontConstrainedToSize:(CGSize)size lineBreakMode:(UILineBreakMode)mode; 
+- (UIFont *)fontConstrainedToSize:(CGSize)size lineBreakMode:(NSLineBreakMode)mode; 
 
 /** Returns the size that fits a certain width and a maximum number of lines.
  @param width Max width for the label frame
