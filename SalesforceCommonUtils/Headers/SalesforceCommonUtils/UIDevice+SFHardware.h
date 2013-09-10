@@ -105,6 +105,8 @@ typedef enum {
  */
 - (UIDevicePlatform) platformType;
 
+- (double)systemVersionNumber;
+
 /**Platform string
  
  Valid values are defined above in the IPHONE_XX_NAMESTRING and IPAD_XXX_NAMESTRING
