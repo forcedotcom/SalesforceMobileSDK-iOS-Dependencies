@@ -54,13 +54,21 @@
 /**
  Store arbitrary data to the keychain for the service (identifier) and account specified in the initializer.
  @param data Arbitrary data to store to in the keychain. May be `nil`.
+ @return The status of the keychain update request.
  */
-- (void)setValueData:(NSData *)data;
+- (OSStatus)setValueData:(NSData *)data;
 
 /**
  Read arbitrary data from the keychain for the service (identifier) and account specified in the initializer.
  @return Arbitrary data read from the keychain. May be `nil`.
  */
 - (NSData *)valueData;
+
+/**
+ Return a string value for an OSStatus error code.
+ @param errorCode The code to stringify
+ @return The string version of the error code.
+ */
++ (NSString *)keychainErrorCodeString:(OSStatus)errorCode;
 
 @end
