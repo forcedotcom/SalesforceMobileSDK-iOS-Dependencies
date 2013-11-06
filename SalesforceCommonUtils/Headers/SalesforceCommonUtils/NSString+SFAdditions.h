@@ -37,6 +37,17 @@
 /** Trim string by taking out beginning and ending space*/
 - (NSString *)trim;
 
+/** Returns the string in debug build or a redacted version of it
+ for production build
+ */
+- (NSString*)redacted;
+
+/** Returns the string in debug build or a redacted version of it
+ for production build. The prefix length is the number of character
+ that won't be redacted from the beginning of the string.
+ */
+- (NSString*)redactedWithPrefix:(NSUInteger)prefixLength;
+
 /** Return YES of string is nil or length is 0 or with white space only
  
  @param string String to check
