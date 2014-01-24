@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+extern NSString * const SFUserAgentAppName;
+
 /**Extension to NSString object
  */
 @interface NSString (SFAdditions)
