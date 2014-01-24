@@ -25,4 +25,21 @@
  @param runningTests Yes if code is running under testing context
  */
 + (void)setIsRunningTests:(BOOL)runningTests;
+
+/** Sets an arbitrary object into the test context
+ @param object The object or nil to remove the object
+ @param key The key
+ */
++ (void)setObject:(id)object forKey:(id)key;
+
+/** Returns an arbitrary object from the test context
+ @param key The key
+ @return The object
+ */
++ (id)objectForKey:(id)key;
+
+/** Removes all the stored objects
+ */
++ (void)clearObjects;
+
 @end
