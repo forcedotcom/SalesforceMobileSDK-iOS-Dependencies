@@ -27,6 +27,7 @@
 #import "SFPathUtil.h"
 #import "SFPhonePickListViewController.h"
 #import "SFPickListViewController.h"
+#import "SFQueryNetworkScopeHelper.h"
 #import "SFSoqlBuilder.h"
 #import "SFSoslBuilder.h"
 #import "SFSoslReturningBuilder.h"

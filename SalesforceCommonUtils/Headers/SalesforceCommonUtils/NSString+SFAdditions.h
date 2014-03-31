@@ -8,6 +8,13 @@
 
 #import <Foundation/Foundation.h>
 
+typedef enum {
+    CHEntityIdLength15 = 15,
+    CHEntityIdLength18 = 18,
+    CHEntityIdLengthMin = CHEntityIdLength15,
+    CHEntityIdLengthMax = CHEntityIdLength18
+} CHEntityIdLength;
+
 extern NSString * const SFUserAgentAppName;
 
 /**Extension to NSString object
@@ -84,5 +91,11 @@ extern NSString * const SFUserAgentAppName;
 /** Returns YES if the string is empty of contains only whitespance or newline characters.
  */
 - (BOOL)isEmptyOrWhitespaceAndNewlines;
+
+/**
+ @return The 18 character case-insensitive entity ID representing the receiver.
+ Returns `nil` if the receiver is not a valid Salesforce entity ID.
+ */
+- (NSString*)entityId18;
 
 @end

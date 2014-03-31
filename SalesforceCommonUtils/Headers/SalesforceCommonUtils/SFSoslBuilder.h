@@ -49,6 +49,13 @@
 
 /** A builder to help create a SOSL statement.
  *
+ * @param networkCategory if an organization uses communities (aka networks), filters all search results based on the network category
+ * @return the builder
+ */
+- (SFSoslBuilder *) networkCategory:(NSString *) networkCategory;
+
+/** A builder to help create a SOSL statement.
+ *
  * @param limit the maximum number of rows returned in the text query, up to 200. If unspecified, the default is 200, the largest number of rows that can be returned
  * @return the builder
  */
