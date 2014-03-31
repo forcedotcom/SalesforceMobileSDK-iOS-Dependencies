@@ -10,9 +10,6 @@
 
 /** This class encapsulate the logic that deals
  with scoping queries with network (aka community).
- 
- The logic used in this class is described in this document:
- https://docs.google.com/a/salesforce.com/document/d/1M3qKij106IVtVgLj6-5EpQ_6dIm9MfaL-QXpY4uOw8E/edit?usp=sharing
  */
 @interface SFQueryNetworkScopeHelper : NSObject
 

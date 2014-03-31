@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 
 typedef enum {
-    CHEntityIdLength15 = 15,
-    CHEntityIdLength18 = 18,
-    CHEntityIdLengthMin = CHEntityIdLength15,
-    CHEntityIdLengthMax = CHEntityIdLength18
-} CHEntityIdLength;
+    SFEntityIdLength15 = 15,
+    SFEntityIdLength18 = 18,
+    SFEntityIdLengthMin = SFEntityIdLength15,
+    SFEntityIdLengthMax = SFEntityIdLength18
+} SFEntityIdLength;
 
 extern NSString * const SFUserAgentAppName;
 
