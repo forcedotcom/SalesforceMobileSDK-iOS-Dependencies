@@ -62,6 +62,13 @@
 
 /** A builder to help create a SOQL statement.
  *
+ * @param networkId The network id to scope this returning statement with or nil if no network id
+ * @return the builder
+ */
+- (SFSoqlBuilder *) networkId:(NSString *) networkId;
+
+/** A builder to help create a SOQL statement.
+ *
  * @param limit specifies the maximum number of rows to return
  * @return the builder
  */

@@ -10,6 +10,10 @@
 
 @interface SFSoslReturningBuilder : NSObject
 
+/** Returns the object name for this builder
+ */
+@property (nonatomic, strong, readonly) NSString *objectName;
+
 /** @name */
 /** A builder to help create a returning statement.
  *
@@ -31,6 +35,13 @@
  * @return the builder
  */
 - (SFSoslReturningBuilder *) where:(NSString *) where;
+
+/** A builder to help create a returning statement.
+ *
+ * @param networkId The network id to scope this returning statement with or nil if no network id
+ * @return the builder
+ */
+- (SFSoslReturningBuilder *) networkId:(NSString *) networkId;
 
 /** A builder to help create a returning statement.
  *
