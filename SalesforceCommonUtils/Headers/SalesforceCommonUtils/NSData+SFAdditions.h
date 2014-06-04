@@ -18,6 +18,10 @@
  */
 @interface NSData (SFBase64)
 
+/**
+ @return The specified number of random bytes or `nil` if an error occurs.
+ */
+- (NSData *)randomDataOfLength:(size_t)length;
 
 /**Create a new base64 encoding of this NSData
  */

@@ -13,6 +13,11 @@
     
 }
 
+/** Creates the file at the specified if it doesn't exist
+ @param skipBackup YES if the file should be marked to not be backed up with iCloud
+ */
++ (void)createFileItemIfNotExist:(NSString *)path skipBackup:(BOOL)skipBackup;
+
 /*Returns application's dcoument directory*/
 + (NSString *)applicationDocumentDirectory;
 

@@ -7,6 +7,12 @@
 
 #import <Foundation/Foundation.h>
 
+
+//Prevent all NSLog commands in release versions
+#ifndef DEBUG
+#define NSLog(__FORMAT__, ...)
+#endif
+
 typedef enum SFLogLevel {
 	SFLogLevelDebug,
 	SFLogLevelInfo,

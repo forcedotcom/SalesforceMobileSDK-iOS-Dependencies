@@ -87,4 +87,13 @@ typedef enum {
  */
 + (NSString *)baseAppIdentifier;
 
+/**
+ Returns whether we have an initialization vector used for encryption stored in the keychain.
+ */
++ (BOOL)hasInitializationVector;
+
+/** The default secret used by chatter for encryption and decryption.
+ */
++ (NSData *)chatterCryptoSecret;
+
 @end
