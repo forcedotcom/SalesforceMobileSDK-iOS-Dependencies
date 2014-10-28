@@ -41,6 +41,15 @@ typedef enum {
 - (id)initWithOperation:(CCOperation)operation key:(NSData *)key mode:(SFCryptoMode)mode;
 
 /**
+ Designated initializer
+ @param operation operation to be performed encrypt/decrypt
+ @param key Key used for encyption/decryption pass nil to use the default key
+ @param iv initialization vector, if set to nil, uses the default initialization vector
+ @param mode Mode which determines whether to perform operation in memory at once or in chunks writing to the disk
+ */
+- (id)initWithOperation:(CCOperation)operation key:(NSData *)key iv:(NSData*)iv mode:(SFCryptoMode)mode;
+
+/**
  Encrypts or decrypts the passed in data, the input data is assumed to be passed in as a chunk
  Method requires finalizeCipher to be called
  @param data input data
@@ -86,6 +95,19 @@ typedef enum {
  @result A unique identifier for the app install on the particular device.
  */
 + (NSString *)baseAppIdentifier;
+
+/**
+ Whether or not the base app identifier has been configured for this app install.
+ @result YES if the base app ID has already been configured, NO otherwise.
+ */
++ (BOOL)baseAppIdentifierIsConfigured;
+
+/**
+ Whether or not the base app identifier was configured at some point during this launch of
+ the app.
+ @result YES if the base app ID was configured during this app launch, NO otherwise.
+ */
++ (BOOL)baseAppIdentifierConfiguredThisLaunch;
 
 /**
  Returns whether we have an initialization vector used for encryption stored in the keychain.

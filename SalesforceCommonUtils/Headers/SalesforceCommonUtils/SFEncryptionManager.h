@@ -32,6 +32,18 @@ typedef void (^SFEncryptionCompletionBlock)(NSError *error);
  */
 - (void)encryptFile:(NSString *)sourceFile saveTo:(NSString *)targetFile completionBlock:(SFEncryptionCompletionBlock)completionBlock;
 
+
+/**Encrypt source file and save to target file
+ 
+ @param sourceFile Path to file that needs to be encrypted
+ @param targetFile Path to save the encrypted file
+ @param key ncryption key to use
+ @param completionBlock Call back block when encryption is done with NSObject as the single parameter.
+ If successful, the NSError object returned will be nil.
+ If failed, NSError will be populated with the error that caused encryption to fail
+ */
+- (void)encryptFile:(NSString *)sourceFile saveTo:(NSString *)targetFile encryptionKey:(NSData *)key completionBlock:(SFEncryptionCompletionBlock)completionBlock;
+
 /**Descrypt source file and save to target file
  
  @param sourceFile Path to file that needs to be decrypted
@@ -41,4 +53,16 @@ typedef void (^SFEncryptionCompletionBlock)(NSError *error);
  If failed, NSError will be populated with the error that caused decryption to fail
  */
 - (void)decryptFile:(NSString *)sourceFile saveTo:(NSString *)targetFile completionBlock:(SFEncryptionCompletionBlock)completionBlock;
+
+/**Descrypt source file and save to target file
+ 
+ @param sourceFile Path to file that needs to be decrypted
+ @param key Encryption key to use
+ @param targetFile Path to save the decrypted file
+ @param completionBlock Call back block when encryption is done with NSObject as the single parameter.
+ If successful, the NSError object returned will be nil.
+ If failed, NSError will be populated with the error that caused decryption to fail
+ */
+- (void)decryptFile:(NSString *)sourceFile withEncryptionKey:(NSData *)key saveTo:(NSString *)targetFile completionBlock:(SFEncryptionCompletionBlock)completionBlock;
+
 @end

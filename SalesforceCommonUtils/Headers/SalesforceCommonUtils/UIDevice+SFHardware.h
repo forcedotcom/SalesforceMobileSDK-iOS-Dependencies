@@ -14,6 +14,10 @@
 #define IPHONE_4_NAMESTRING             @"iPhone 4"
 #define IPHONE_4S_NAMESTRING            @"iPhone 4S"
 #define IPHONE_5_NAMESTRING             @"iPhone 5"
+#define IPHONE_5C_NAMESTRING            @"iPhone 5C"
+#define IPHONE_5S_NAMESTRING            @"iPhone 5S"
+#define IPHONE_6_NAMESTRING             @"iPhone 6"
+#define IPHONE_6P_NAMESTRING            @"iPhone 6+"
 #define IPHONE_UNKNOWN_NAMESTRING       @"Unknown iPhone"
 
 #define IPOD_1G_NAMESTRING              @"iPod touch 1G"
@@ -26,9 +30,12 @@
 #define IPAD_2G_NAMESTRING              @"iPad 2G"
 #define IPAD_3G_NAMESTRING              @"iPad 3G"
 #define IPAD_4G_NAMESTRING              @"iPad 4G"
+#define IPAD_AIR_NAMESTRING             @"iPad Air"
+
 #define IPAD_UNKNOWN_NAMESTRING         @"Unknown iPad"
 
 #define IPAD_MINI_1G_NAMESTRING         @"iPad mini 1G"
+#define IPAD_MINI_RETINA_NAMESTRING     @"iPad Mini Retina"
 
 #define APPLETV_2G_NAMESTRING           @"Apple TV 2G"
 #define APPLETV_3G_NAMESTRING           @"Apple TV 3G"
@@ -47,6 +54,8 @@ typedef enum {
     
     UIDeviceSimulator,
     UIDeviceSimulatoriPhone,
+    UIDeviceSimulatoriPhone6,
+    UIDeviceSimulatoriPhone6Plus,
     UIDeviceSimulatoriPad,
     UIDeviceSimulatorAppleTV,
     
@@ -56,6 +65,10 @@ typedef enum {
     UIDevice4iPhone,
     UIDevice4SiPhone,
     UIDevice5iPhone,
+    UIDevice5CiPhone,
+    UIDevice5SiPhone,
+    UIDevice6iPhone,
+    UIDevice6PlusiPhone,
     
     UIDevice1GiPod,
     UIDevice2GiPod,
@@ -66,8 +79,10 @@ typedef enum {
     UIDevice2GiPad,
     UIDevice3GiPad,
     UIDevice4GiPad,
+    UIDeviceiPadAir,
     
     UIDevice1GiPadMini,
+    UIDeviceiPadMiniRetina,
     
     UIDeviceAppleTV2,
     UIDeviceAppleTV3,
@@ -147,6 +162,4 @@ typedef enum {
  This method will first try to retrieve orientation using UIDevice currentOrientation, if return value is an invalid orientation, it will try to use status bar orientation as fallback
  */
 - (UIInterfaceOrientation)interfaceOrientation;
-
-
 @end

@@ -21,8 +21,14 @@
 - (id) objectAtPath:(NSString *) path;
 
 /**
- @return `nil` if the key has a value of `NSNull` or an NSString value of `<nil>`.
+ @return `nil` if the key has a value of `NSNull` or an NSString value of `<nil>` or `<null>`.
  */
 - (id)nonNullObjectForKey:(id)key;
+
+/**
+ Cleans the dictionary of any "<nil>" "<null>" or "NSNull" values.
+ @return A new dictionary with nil/null/NSNull key/values removed
+ */
+- (id)cleansedDictionary;
 
 @end

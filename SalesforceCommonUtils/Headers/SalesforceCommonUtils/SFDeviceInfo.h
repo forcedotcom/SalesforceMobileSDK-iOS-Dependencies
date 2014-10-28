@@ -29,6 +29,10 @@
  */
 + (BOOL)currentDeviceIsIPad;
 
+/**Return YES if device is iPhone
+ */
++ (BOOL)currentDeviceIsIPhone;
+
 /**Return YES if device is retina enabled device*/
 + (BOOL)isRetina;
 
