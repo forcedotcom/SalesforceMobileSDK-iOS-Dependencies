@@ -15,17 +15,18 @@
     NSMutableDictionary *_keychainQuery;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *keychainData;
-
 /*!
  Determines if the keychain wrapper should encrypt/decrypt keychain sensitive data like refreshtoken
  */
 @property (nonatomic) BOOL encrypted;
 
 /*!
- Designated initializer
+ Factory method to hand out an SFKeychainItemWrapper object with the given identifier and account.
+ Note that, for any given combination of identifier and account, only one object will be created
+ at runtime.  Subsequent requests will return the same object.
  */
-- (id)initWithIdentifier:(NSString *)identifier account:(NSString *)account;
++ (SFKeychainItemWrapper *)itemWithIdentifier:(NSString *)identifier account:(NSString *)account;
+
 /*!
  Reset the keychain item
  */
@@ -40,16 +41,6 @@
 - (void)setPasscode:(NSString *)passcode;
 - (NSString *)passcode;
 - (BOOL)verifyPasscode:(NSString *)passcode;
-/*!
- sets passcode in keychain, input is an already hashed passcode. needed for v1 to v2 upgrade
- */
-- (void)setHashedPasscode:(NSString *)passcode;
-
-/*!
- oAuth token related methods
- */
-- (void)setToken:(NSData *)token;
-- (NSData *)token;
 
 /**
  Store arbitrary data to the keychain for the service (identifier) and account specified in the initializer.
