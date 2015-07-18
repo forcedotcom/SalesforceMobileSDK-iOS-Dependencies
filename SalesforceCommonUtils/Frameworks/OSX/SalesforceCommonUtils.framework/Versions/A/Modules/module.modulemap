@@ -1,0 +1,6 @@
+framework module SalesforceCommonUtils {
+    umbrella header "SalesforceCommonUtils.h"
+    
+    export *
+    module * { export * }
+}
