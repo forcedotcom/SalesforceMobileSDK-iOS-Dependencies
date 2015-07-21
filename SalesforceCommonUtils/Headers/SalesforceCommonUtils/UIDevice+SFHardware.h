@@ -30,12 +30,14 @@
 #define IPAD_2G_NAMESTRING              @"iPad 2G"
 #define IPAD_3G_NAMESTRING              @"iPad 3G"
 #define IPAD_4G_NAMESTRING              @"iPad 4G"
-#define IPAD_AIR_NAMESTRING             @"iPad Air"
+#define IPAD_AIR_1G_NAMESTRING          @"iPad Air 1G"
+#define IPAD_AIR_2G_NAMESTRING          @"iPad Air 2G"
 
 #define IPAD_UNKNOWN_NAMESTRING         @"Unknown iPad"
 
 #define IPAD_MINI_1G_NAMESTRING         @"iPad mini 1G"
-#define IPAD_MINI_RETINA_NAMESTRING     @"iPad Mini Retina"
+#define IPAD_MINI_2G_NAMESTRING         @"iPad mini 2G"
+#define IPAD_MINI_3G_NAMESTRING         @"iPad mini 3G"
 
 #define APPLETV_2G_NAMESTRING           @"Apple TV 2G"
 #define APPLETV_3G_NAMESTRING           @"Apple TV 3G"
@@ -79,10 +81,12 @@ typedef enum {
     UIDevice2GiPad,
     UIDevice3GiPad,
     UIDevice4GiPad,
-    UIDeviceiPadAir,
+    UIDevice1GiPadAir,
+    UIDevice2GiPadAir,
     
     UIDevice1GiPadMini,
-    UIDeviceiPadMiniRetina,
+    UIDevice2GiPadMini,
+    UIDevice3GiPadMini,
     
     UIDeviceAppleTV2,
     UIDeviceAppleTV3,
@@ -162,4 +166,11 @@ typedef enum {
  This method will first try to retrieve orientation using UIDevice currentOrientation, if return value is an invalid orientation, it will try to use status bar orientation as fallback
  */
 - (UIInterfaceOrientation)interfaceOrientation;
+
+/**
+ *  Determine if current device is simulator or not
+ *
+ *  @return Return YES if current device is simulator, NO otherwise.
+ */
+- (BOOL)isSimulator;
 @end

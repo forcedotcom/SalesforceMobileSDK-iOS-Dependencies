@@ -8,12 +8,32 @@
 
 #import <Foundation/Foundation.h>
 
+// Keychain item exception defines
+
+typedef NS_ENUM(NSUInteger, SFKeychainItemExceptionErrorCode) {
+    SFKeychainItemExceptionKeychainInaccessible = 1,
+};
+
+extern NSString * const kSFKeychainItemExceptionType;
+extern NSString * const kSFKeychainItemExceptionErrorCodeKey;
+
 /**
  This is a wrapper class used to interact with the keychain.
  */
 @interface SFKeychainItemWrapper : NSObject {
     NSMutableDictionary *_keychainQuery;
 }
+
+/*!
+ @return Whether or not keychain access errors cause a fatal exception.  Default is YES.
+ */
++ (BOOL)keychainAccessErrorsAreFatal;
+
+/*!
+ Sets whether or not keychain access errors cause a fatal exception.
+ @param errorsAreFatal Whether keychain access errors should be fatal.
+ */
++ (void)setKeychainAccessErrorsAreFatal:(BOOL)errorsAreFatal;
 
 /*!
  Determines if the keychain wrapper should encrypt/decrypt keychain sensitive data like refreshtoken

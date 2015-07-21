@@ -7,7 +7,6 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CommonCrypto/CommonCryptor.h>
 
 /**
  This class is responsible for encrypting and decrypting the content data for chatter.
@@ -19,6 +18,10 @@ typedef enum {
     
 } SFCryptoMode;
 
+typedef enum : uint32_t {
+    kSFEncrypt = 0,
+    kSFDecrypt,
+} SFCryptoOperation;
 
 @interface SFCrypto : NSObject
 
@@ -38,7 +41,7 @@ typedef enum {
  @param key Key used for encyption/decryption pass nil to use the default key
  @param mode Mode which determines whether to perform operation in memory at once or in chunks writing to the disk
  */
-- (id)initWithOperation:(CCOperation)operation key:(NSData *)key mode:(SFCryptoMode)mode;
+- (id)initWithOperation:(SFCryptoOperation)operation key:(NSData *)key mode:(SFCryptoMode)mode;
 
 /**
  Designated initializer
@@ -47,7 +50,7 @@ typedef enum {
  @param iv initialization vector, if set to nil, uses the default initialization vector
  @param mode Mode which determines whether to perform operation in memory at once or in chunks writing to the disk
  */
-- (id)initWithOperation:(CCOperation)operation key:(NSData *)key iv:(NSData*)iv mode:(SFCryptoMode)mode;
+- (id)initWithOperation:(SFCryptoOperation)operation key:(NSData *)key iv:(NSData*)iv mode:(SFCryptoMode)mode;
 
 /**
  Encrypts or decrypts the passed in data, the input data is assumed to be passed in as a chunk

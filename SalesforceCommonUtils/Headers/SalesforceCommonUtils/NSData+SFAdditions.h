@@ -6,7 +6,7 @@
 //  Copyright (c) 2008-2012 salesforce.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 /**Extension to NSData class to provide common functions
  

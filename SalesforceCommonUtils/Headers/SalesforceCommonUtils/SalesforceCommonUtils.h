@@ -38,3 +38,4 @@
 #import "UIBarButtonItem+SFAddtions.h"
 #import "UIDevice+SFHardware.h"
 #import "UILabel+SFAdditions.h"
+#import "UIScreen+SFAdditions.h"
