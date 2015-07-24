@@ -15,6 +15,7 @@
 extern NSString *const DEFAULT_KEY_LAST_ACTIVITY;
 
 @interface SFInactivityTimerCenter : NSObject
+
 /*!
  * Register the timer
  */

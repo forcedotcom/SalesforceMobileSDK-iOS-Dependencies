@@ -6,7 +6,14 @@
 //  Copyright (c) 2010-2012 salesforce.com. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
+#if (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
+@import MessageUI;
+@import UIKit;
+#else
+@import AppKit;
+#endif
 
 /**This is a utility class that check whether some capability is supported on the current device
  */
