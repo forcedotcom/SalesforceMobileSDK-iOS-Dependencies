@@ -6,6 +6,7 @@
 //  Copyright (c) 2012 salesforce.com. All rights reserved.
 //
 
+#import <Foundation/Foundation.h>
 
 /**Extension to NSDictionary object
  
