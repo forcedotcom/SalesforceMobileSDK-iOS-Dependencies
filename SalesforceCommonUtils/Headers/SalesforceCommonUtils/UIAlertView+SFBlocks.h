@@ -6,7 +6,7 @@
 //  Copyright (c) 2011-2012 salesforce.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 // The block being called when the alert is dismissed
 typedef void (^SFAlertViewDismissBlock) (UIAlertView *alertView, NSInteger buttonIndex);
