@@ -6,7 +6,7 @@
 //  Copyright (c) 2012 Salesforce.com. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface SFUIUtils : NSObject
 
