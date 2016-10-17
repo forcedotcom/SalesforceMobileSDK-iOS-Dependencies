@@ -40,5 +40,17 @@
  */
 + (BOOL)canSendMessage;
 
+/**Return YES if device can open excel files
+ */
++ (BOOL)canOpenExcel;
+
+/**Return YES if device can open word files
+ */
++ (BOOL)canOpenWord;
+
+/**Return YES if device can open ppt files
+ */
++ (BOOL)canOpenPowerPoint;
+
 @end
 

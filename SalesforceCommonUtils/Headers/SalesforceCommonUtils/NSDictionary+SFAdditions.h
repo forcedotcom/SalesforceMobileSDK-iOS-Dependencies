@@ -31,4 +31,6 @@
  */
 - (id)cleansedDictionary;
 
+- (NSString*)jsonString;
+
 @end

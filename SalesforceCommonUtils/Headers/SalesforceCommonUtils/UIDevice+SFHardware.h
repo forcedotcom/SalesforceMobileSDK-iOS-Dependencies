@@ -18,6 +18,8 @@
 #define IPHONE_5S_NAMESTRING            @"iPhone 5S"
 #define IPHONE_6_NAMESTRING             @"iPhone 6"
 #define IPHONE_6P_NAMESTRING            @"iPhone 6+"
+#define IPHONE_6s_NAMESTRING             @"iPhone 6s"
+#define IPHONE_6sP_NAMESTRING            @"iPhone 6s+"
 #define IPHONE_UNKNOWN_NAMESTRING       @"Unknown iPhone"
 
 #define IPOD_1G_NAMESTRING              @"iPod touch 1G"
@@ -30,12 +32,14 @@
 #define IPAD_2G_NAMESTRING              @"iPad 2G"
 #define IPAD_3G_NAMESTRING              @"iPad 3G"
 #define IPAD_4G_NAMESTRING              @"iPad 4G"
-#define IPAD_AIR_NAMESTRING             @"iPad Air"
+#define IPAD_AIR_1G_NAMESTRING          @"iPad Air 1G"
+#define IPAD_AIR_2G_NAMESTRING          @"iPad Air 2G"
 
 #define IPAD_UNKNOWN_NAMESTRING         @"Unknown iPad"
 
 #define IPAD_MINI_1G_NAMESTRING         @"iPad mini 1G"
-#define IPAD_MINI_RETINA_NAMESTRING     @"iPad Mini Retina"
+#define IPAD_MINI_2G_NAMESTRING         @"iPad mini 2G"
+#define IPAD_MINI_3G_NAMESTRING         @"iPad mini 3G"
 
 #define APPLETV_2G_NAMESTRING           @"Apple TV 2G"
 #define APPLETV_3G_NAMESTRING           @"Apple TV 3G"
@@ -49,7 +53,7 @@
 #define SIMULATOR_IPAD_NAMESTRING       @"iPad Simulator"
 #define SIMULATOR_APPLETV_NAMESTRING    @"Apple TV Simulator"
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, UIDevicePlatform) {
     UIDeviceUnknown,
     
     UIDeviceSimulator,
@@ -69,6 +73,8 @@ typedef enum {
     UIDevice5SiPhone,
     UIDevice6iPhone,
     UIDevice6PlusiPhone,
+    UIDevice6siPhone,
+    UIDevice6sPlusiPhone,
     
     UIDevice1GiPod,
     UIDevice2GiPod,
@@ -79,10 +85,12 @@ typedef enum {
     UIDevice2GiPad,
     UIDevice3GiPad,
     UIDevice4GiPad,
-    UIDeviceiPadAir,
+    UIDevice1GiPadAir,
+    UIDevice2GiPadAir,
     
     UIDevice1GiPadMini,
-    UIDeviceiPadMiniRetina,
+    UIDevice2GiPadMini,
+    UIDevice3GiPadMini,
     
     UIDeviceAppleTV2,
     UIDeviceAppleTV3,
@@ -92,18 +100,16 @@ typedef enum {
     UIDeviceUnknowniPod,
     UIDeviceUnknowniPad,
     UIDeviceUnknownAppleTV,
-    UIDeviceIFPGA,
-    
-} UIDevicePlatform;
+    UIDeviceIFPGA
+};
 
-typedef enum {
+typedef NS_ENUM(NSUInteger, UIDeviceFamily) {
     UIDeviceFamilyiPhone,
     UIDeviceFamilyiPod,
     UIDeviceFamilyiPad,
     UIDeviceFamilyAppleTV,
-    UIDeviceFamilyUnknown,
-    
-} UIDeviceFamily;
+    UIDeviceFamilyUnknown
+};
 
 /**Extension to UIDevice class to provide more hardware related information, including hardware model, capability and also most importantly current device's orientation
  */
@@ -143,6 +149,12 @@ typedef enum {
 /**User Memory*/
 - (NSUInteger) userMemory;
 
+/**Memory used by application (in bytes)*/
+- (NSUInteger) applicationMemory;
+
+/**Free VM page space available to application (in bytes)*/
+- (NSUInteger) freeMemory;
+
 /**Total disk space*/
 - (NSNumber *) totalDiskSpace;
 
@@ -162,4 +174,27 @@ typedef enum {
  This method will first try to retrieve orientation using UIDevice currentOrientation, if return value is an invalid orientation, it will try to use status bar orientation as fallback
  */
 - (UIInterfaceOrientation)interfaceOrientation;
+
+/**
+ *  Determine if current device is simulator or not
+ *
+ *  @return Return YES if current device is simulator, NO otherwise.
+ */
+- (BOOL)isSimulator;
+
+/* Determine if the current device can place phone calls.
+ * @return Returns YES if the current device can make a phone call, NO otherwise.
+ */
+- (BOOL)canDevicePlaceAPhoneCall;
+
+/* Determine if the current device has the screen size of an iPhone 6.
+ * @return Returns YES if so, NO otherwise.
+ */
+- (BOOL)hasIphone6ScreenSize;
+
+/* Determine if the current device has the screen size of an iPhone 6 plus.
+ * @return Returns YES if so, NO otherwise.
+ */
+- (BOOL)hasIphone6PlusScreenSize;
+
 @end
